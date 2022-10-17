@@ -2,24 +2,28 @@
 ## by Fidelis Mukudi
 
 
-## Dataset
+## Introduction
 
-This project is about the Analysis of data from FBI's National Instant Criminal Background Check System. The data is used by gun shops to check if a person is elegible to buy a firearm or an explosive. I have investigated how difefrent variables affect a person's eligibility to buy a firearm or an explosive. I have also used the US census data to get an insite on how the population relates to the gun data.
+The project was about the analysis of data in a Twitter account by the user name @dog_rate also called WeRateDogs. On the account, Twitter user rate dogs and provide comments on them. The rating has a denominator of 10 with a denominator of a number more than 10. 
 
-Therefore, I have invesigated two data sets, the gun_data.xlsx data and the U.S. Census Data.csv data.
+In this project, we were provided with two data sets, twitter_archive_enhanced.csv and image predictions.tsv data. The first data contained tweet details except for the favorite counts and the retweet counts. This data was extracted manually. The second data contained the details of dog images. A link was provided, hence, the data was programmatically extracted. Since the data from twitter_archive had retweets as well, we used the tweet_ids from the image-prediction data to filter our
+data having original tweets only. This was based on an assumption that the image is only attached to the original tweets.
 
-The source of the two data sets comes from github.
-
+The information contained in the two data sets was not enough to make informed insights on dog ratings, as such, we gathered a third data set from the Twitter account using the Twitter API. The data was cleaned and the following questions were answered; 
+* Which dogs have the highest and the lowest average rating?
+* What is the dog ranking based on the average favorite counts and the average number of retweets?
+* Do the dogs with higher have higher favorite counts and number of retweets
+* What is the effective percentage ranking of the dogs based on the favorite counts, number of retweets, and ratings? Does the ranking based on the effective percentage agree with the other rankings used earlier? 
 
 ## Summary of Findings
 
-We have found that there is a very steep trend in the increase of purchase of guns and explosives with respect to time.The limitation of the project is that, we cannot attribute this to any variable that we analysed.Another result is that Kenturky has the highest of about 76% of buying a gun or an explosive. The second state is Indiana whose chance is 14% way much below than Kenturky. In the other states, there is less than 8% chance of one being allowed to buy or purchase the gun or explosive. On the other hand, **New Jersey, Rhode Island, Vermont** and **Oklahoma** have zero chance of one buying a gun or an explosive. This implies the four states have very low, almost no chance of buying a gun or explosive. 
+In the project, found that Puppo is the most highly ranked dog name followed by popper and doggo is the least ranked one. We were not able to get a better rank for floofer because we had limited data to understand help us rank it. It only have one value. 
 
-I also found that, **poverty level, Per capita income,  the population estimates** and  **Total employment** have a weak positive correlation with the **chance of one getting a permit**. These variable can weakly approximate the chance of one buying a gun or an explosive. A limitation of this finding is that the conclusion is based on correlation only. In fact, on visual correlation rather than numeric which may not be perfect one.
+We also found that the dog names with higher ranking had more average favorite counts and retweet counts compared to others. On the other hand, the dog name with the lowest ranking had fewer average favorite counts and retweet counts compared to others.
+
+Finally, we came up with a metric that combined the ranking, the favorite count and the retweet counts. The new metric gave us results that were in agreement with the rankings of the dogs as done with the earlier metrics.
 
 
 
 ## Limitations
-
-One of the limitation of the project was that the *census data* provided was not sufficient to enable me analyse for the correlations between the the **chance of getting a permit** and with **poverty level, Per capita income,  the population estimates** and  **Total employment** from 1988 to 2017. This is because the *gun data* had data from 1988 to 2017 while the *census data* had data for 2016 and 2010 which were not sufficient. On the hand other information such as total employment and poverty level was based on 2015 and not 2016, a year we used to represent the population of the states. Therefore, the results does not give a bigger picture of all these 30 years but merely one year.
-Another limitation is that the correlation analysis is based on visualization only rather than visualization and modeling to find a regression function. This is a limitation because we cannot understand the degree of correlation and the significance of the variables that I used in analysis.
+The main limitation is that the scope of the data was limited to 2017 or later and most rows had no dog ratings. As such, we had very few data rows at the end of the cleaning. For instance, the floofer dog had one rating only in the final data. This does did not give us a sufficient result that can be replicated when the same report is done on a bigger data set.
